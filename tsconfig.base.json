@@ -14,7 +14,18 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@app/*": ["apps/conduit/src/app/*"],
+      "@env/*": ["apps/angular-boilerplate/src/environments/*"],
+      "@nx-angular-boilerplate/auth": ["libs/auth/src/index.ts"],
+      "@nx-angular-boilerplate/core": ["libs/core/src/index.ts"],
+      "@nx-angular-boilerplate/form": ["libs/form/src/index.ts"],
+      "@nx-angular-boilerplate/material": ["libs/material/src/index.ts"],
+      "@nx-angular-boilerplate/models": ["libs/models/src/index.ts"],
+      "@nx-angular-boilerplate/shared": ["libs/shared/src/index.ts"],
+      "@nx-angular-boilerplate/store": ["libs/store/src/index.ts"],
+      "@nx-angular-boilerplate/utils": ["libs/utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

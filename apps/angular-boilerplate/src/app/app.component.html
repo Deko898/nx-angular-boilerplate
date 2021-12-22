@@ -1,1 +1,4 @@
-<nx-angular-boilerplate-nx-welcome></nx-angular-boilerplate-nx-welcome>
+<router-outlet></router-outlet>
+<ng-container *ngIf="cars$ | async as cars">
+    <nx-angular-boilerplate-table [data]="cars"></nx-angular-boilerplate-table>
+</ng-container>
