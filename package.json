@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "nx",
-    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
+    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main && husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks",
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
