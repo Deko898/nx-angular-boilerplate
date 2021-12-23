@@ -4,10 +4,10 @@ import { Observable } from 'rxjs';
 import { environment } from '@env/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   get<T>(url: string, params: HttpParams = new HttpParams()): Observable<T> {
     return this.http.get<T>(`${environment.api_url}${url}`, {
@@ -17,13 +17,21 @@ export class ApiService {
   }
 
   post<T, D>(url: string, data: D): Observable<T> {
-    return this.http.post<T>(`${environment.api_url}${url}`, JSON.stringify(data), { headers: this.headers });
+    return this.http.post<T>(
+      `${environment.api_url}${url}`,
+      JSON.stringify(data),
+      { headers: this.headers }
+    );
   }
 
   put<T, D>(url: string, data: D): Observable<T> {
-    return this.http.put<T>(`${environment.api_url}${url}`, JSON.stringify(data), {
-      headers: this.headers,
-    });
+    return this.http.put<T>(
+      `${environment.api_url}${url}`,
+      JSON.stringify(data),
+      {
+        headers: this.headers,
+      }
+    );
   }
 
   delete<T>(url: string): Observable<T> {

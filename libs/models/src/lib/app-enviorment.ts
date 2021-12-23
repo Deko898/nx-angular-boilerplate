@@ -1,4 +1,4 @@
 export interface AppEnviorment {
-    production: boolean;
-    api_url: string;
+  production: boolean;
+  api_url: string;
 }

@@ -1,7 +1,11 @@
 <mat-form-field appearance="outline" [formGroup]="group" class="form-group">
-    <mat-label>{{field.label}}</mat-label>
-    <input matInput [attr.type]="field?.attrs?.type || 'text'" [attr.placeholder]="field?.placeholder"
-        [formControlName]="field.name">
-    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  <mat-label>{{ field.label }}</mat-label>
+  <input
+    matInput
+    [attr.type]="field?.attrs?.type || 'text'"
+    [attr.placeholder]="field?.placeholder"
+    [formControlName]="field.name"
+  />
+  <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
     <mat-hint>Hint</mat-hint> -->
 </mat-form-field>

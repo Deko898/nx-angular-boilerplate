@@ -8,19 +8,13 @@ import { TextareaComponent } from './fields/textarea/textarea.component';
 import { MaterialModule } from '@nx-angular-boilerplate/material';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    MaterialModule
-  ],
+  imports: [CommonModule, ReactiveFormsModule, MaterialModule],
   declarations: [
     DynamicFormComponent,
     DynamicFieldDirective,
     InputComponent,
-    TextareaComponent
+    TextareaComponent,
   ],
-  exports: [
-    DynamicFormComponent
-  ],
+  exports: [DynamicFormComponent],
 })
 export class FormModule {}

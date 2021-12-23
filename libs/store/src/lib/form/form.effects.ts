@@ -5,14 +5,12 @@ import * as FormActions from './form.actions';
 
 @Injectable()
 export class FormEffects {
-
   setData$ = createEffect(() =>
     this.actions$.pipe(
       ofType(FormActions.setData, FormActions.updateData),
-      map(() => FormActions.initializeErrors()),
-    ),
+      map(() => FormActions.initializeErrors())
+    )
   );
 
-  constructor(private actions$: Actions) { }
-
+  constructor(private actions$: Actions) {}
 }

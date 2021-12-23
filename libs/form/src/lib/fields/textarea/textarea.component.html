@@ -1,5 +1,9 @@
 <mat-form-field appearance="outline" [formGroup]="group" class="form-group">
-    <mat-label>{{field.label}}</mat-label>
-    <textarea matInput [attr.rows]="field?.attrs?.rows || 5" [formControlName]="field.name"
-        [attr.placeholder]="field?.placeholder"></textarea>
+  <mat-label>{{ field.label }}</mat-label>
+  <textarea
+    matInput
+    [attr.rows]="field?.attrs?.rows || 5"
+    [formControlName]="field.name"
+    [attr.placeholder]="field?.placeholder"
+  ></textarea>
 </mat-form-field>

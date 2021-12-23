@@ -11,7 +11,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
-import { MatSortModule } from "@angular/material/sort";
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   imports: [
@@ -27,7 +27,7 @@ import { MatSortModule } from "@angular/material/sort";
     MatMenuModule,
     MatTableModule,
     MatSelectModule,
-    MatSortModule
+    MatSortModule,
   ],
   exports: [
     FlexLayoutModule,
@@ -42,7 +42,7 @@ import { MatSortModule } from "@angular/material/sort";
     MatMenuModule,
     MatTableModule,
     MatSelectModule,
-    MatSortModule
-  ]
+    MatSortModule,
+  ],
 })
 export class MaterialModule {}

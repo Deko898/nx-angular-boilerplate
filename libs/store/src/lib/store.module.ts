@@ -1,4 +1,9 @@
-import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
+import {
+  ModuleWithProviders,
+  NgModule,
+  Optional,
+  SkipSelf,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -21,7 +26,9 @@ export class NgrxStoreModule {
     }
   }
 
-  static forParent(environment: AppEnviorment): (any[] | ModuleWithProviders<any>)[] {
+  static forParent(
+    environment: AppEnviorment
+  ): (any[] | ModuleWithProviders<any>)[] {
     return [
       StoreModule.forRoot(reducers),
       EffectsModule.forRoot(effects),
@@ -34,7 +41,7 @@ export class NgrxStoreModule {
       {
         ngModule: NgrxStoreModule,
         // providers: [RouterFacade]
-      }
+      },
     ];
   }
 }

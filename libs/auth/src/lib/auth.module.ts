@@ -16,13 +16,10 @@ import { FormModule } from '@nx-angular-boilerplate/form';
       {
         path: 'register',
         component: RegisterComponent,
-      }
+      },
     ]),
-    FormModule
+    FormModule,
   ],
-  declarations: [
-    LoginComponent,
-    RegisterComponent
-  ],
+  declarations: [LoginComponent, RegisterComponent],
 })
-export class AuthModule { }
+export class AuthModule {}

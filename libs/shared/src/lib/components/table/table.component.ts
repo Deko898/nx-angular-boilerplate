@@ -1,15 +1,20 @@
 // FOR REFERENCE CHECK THE LINK BELOW:
-// https://betterprogramming.pub/angular-material-build-your-own-generic-mattable-a49ba68a375a 
+// https://betterprogramming.pub/angular-material-build-your-own-generic-mattable-a49ba68a375a
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { SortDirection } from '@angular/material/sort';
 import { ColumnModel, TableModel } from '@nx-angular-boilerplate/models';
-import { deepClone, tableSymbol, _orderBy, _sortBy } from '@nx-angular-boilerplate/utils';
+import {
+  deepClone,
+  tableSymbol,
+  _orderBy,
+  _sortBy,
+} from '@nx-angular-boilerplate/utils';
 
 @Component({
   selector: 'nx-angular-boilerplate-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableComponent {
   private _data!: any[];
@@ -43,7 +48,7 @@ export class TableComponent {
   private buildColumns() {
     this.columns = this._tableModel.columns;
     this.sortColumns();
-    this.displayedColumns = this.columns.map(col => col.key);
+    this.displayedColumns = this.columns.map((col) => col.key);
   }
 
   private sortColumns() {

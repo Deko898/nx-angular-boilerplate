@@ -1,4 +1,3 @@
 export function dateUtils(): string {
-    return 'dateUtils';
-  }
-  
+  return 'dateUtils';
+}

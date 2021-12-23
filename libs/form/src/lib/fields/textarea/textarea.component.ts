@@ -1,4 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  Input,
+} from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Field } from '@nx-angular-boilerplate/models';
 
@@ -6,7 +11,7 @@ import { Field } from '@nx-angular-boilerplate/models';
   selector: 'nx-angular-boilerplate-textarea',
   templateUrl: './textarea.component.html',
   styleUrls: ['./textarea.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TextareaComponent {
   @Input() field!: Field;

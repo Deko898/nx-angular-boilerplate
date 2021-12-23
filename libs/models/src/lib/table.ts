@@ -1,4 +1,4 @@
-import { ColumnModel } from "../";
+import { ColumnModel } from '../';
 
 export class TableModel {
   columns: ColumnModel[] = [];

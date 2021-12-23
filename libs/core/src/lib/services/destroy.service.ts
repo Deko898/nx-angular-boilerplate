@@ -3,7 +3,6 @@ import { Subject } from 'rxjs';
 
 @Injectable()
 export class DestroyService extends Subject<void> implements OnDestroy {
-
   constructor() {
     super();
   }

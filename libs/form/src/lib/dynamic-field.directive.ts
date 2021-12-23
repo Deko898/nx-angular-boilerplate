@@ -1,4 +1,12 @@
-import { ComponentRef, Directive, Input, OnChanges, OnInit, Type, ViewContainerRef } from '@angular/core';
+import {
+  ComponentRef,
+  Directive,
+  Input,
+  OnChanges,
+  OnInit,
+  Type,
+  ViewContainerRef,
+} from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Field } from '@nx-angular-boilerplate/models';
 import { InputComponent } from './fields/input/input.component';
@@ -10,14 +18,14 @@ const componentsMapper: { [key: string]: Type<any> } = {
 };
 
 @Directive({
-  selector: '[nxAngularBoilerplateDynamicField]'
+  selector: '[nxAngularBoilerplateDynamicField]',
 })
 export class DynamicFieldDirective implements OnInit, OnChanges {
   @Input() field!: Field;
   @Input() group!: FormGroup;
   component!: ComponentRef<InputComponent | TextareaComponent>;
 
-  constructor(private viewContainerRef: ViewContainerRef) { }
+  constructor(private viewContainerRef: ViewContainerRef) {}
 
   ngOnChanges() {
     if (this.component) {
@@ -27,9 +35,10 @@ export class DynamicFieldDirective implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.component = this.viewContainerRef.createComponent<InputComponent | TextareaComponent>(componentsMapper[this.field.type]);
+    this.component = this.viewContainerRef.createComponent<
+      InputComponent | TextareaComponent
+    >(componentsMapper[this.field.type]);
     this.component.instance.field = this.field;
     this.component.instance.group = this.group;
   }
-
 }

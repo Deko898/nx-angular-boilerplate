@@ -1,4 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  OnDestroy,
+} from '@angular/core';
 import { Validators } from '@angular/forms';
 import { Field, FieldInputType } from '@nx-angular-boilerplate/models';
 import { FormFacade } from '@nx-angular-boilerplate/store';
@@ -29,7 +34,7 @@ const structure: Field[] = [
     type: FieldInputType.TEXTAREA,
     name: 'TEXTAREA',
     placeholder: 'TEXTAREA',
-    label: 'TEXTAREA'
+    label: 'TEXTAREA',
   },
 ];
 
@@ -37,13 +42,13 @@ const structure: Field[] = [
   selector: 'nx-angular-boilerplate-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent implements OnInit, OnDestroy {
   structure$: Observable<Field[]> = this.formFacade.data$;
   data$: Observable<any> = this.formFacade.structure$;
 
-  constructor(private formFacade: FormFacade) { }
+  constructor(private formFacade: FormFacade) {}
 
   ngOnInit(): void {
     this.formFacade.setStructure(structure);

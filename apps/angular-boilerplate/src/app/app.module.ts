@@ -21,16 +21,16 @@ import { SharedModule } from '@nx-angular-boilerplate/shared';
           path: '',
           loadChildren: () =>
             import('@nx-angular-boilerplate/auth').then((m) => m.AuthModule),
-        }
+        },
       ],
       {
         initialNavigation: 'enabled',
         useHash: true,
         relativeLinkResolution: 'legacy',
-      },
+      }
     ),
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

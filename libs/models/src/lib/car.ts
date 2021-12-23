@@ -1,5 +1,5 @@
-import { Column } from "@nx-angular-boilerplate/utils";
-import { autoserializeAs } from "cerializr";
+import { Column } from '@nx-angular-boilerplate/utils';
+import { autoserializeAs } from 'cerializr';
 
 export class Car {
   @autoserializeAs(Number)
@@ -11,14 +11,14 @@ export class Car {
   @autoserializeAs(String)
   @Column({
     canSort: true,
-    header: 'Model'
+    header: 'Model',
   })
   model!: string;
   @autoserializeAs(Date)
   @Column({
     header: 'Year of production',
     order: -1,
-    canSort: true
+    canSort: true,
   })
   year!: Date;
 }

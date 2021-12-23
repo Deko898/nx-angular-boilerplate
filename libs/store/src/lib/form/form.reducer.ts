@@ -13,9 +13,8 @@ export const initialState: Form = {
   structure: [],
   valid: true,
   errors: {},
-  touched: false
+  touched: false,
 };
-
 
 export const formReducer = createReducer(
   initialState,
@@ -24,11 +23,17 @@ export const formReducer = createReducer(
     const data = { ...state.data, ...action.data };
     return { ...state, data, touched: true };
   }),
-  on(FormActions.setStructure, (state, action) => ({ ...state, structure: action.structure.slice(0) })),
-  on(FormActions.setErrors, (state, action) => ({ ...state, errors: action.errors })),
+  on(FormActions.setStructure, (state, action) => ({
+    ...state,
+    structure: action.structure.slice(0),
+  })),
+  on(FormActions.setErrors, (state, action) => ({
+    ...state,
+    errors: action.errors,
+  })),
   on(FormActions.initializeErrors, (state) => ({ ...state, errors: {} })),
   on(FormActions.initializeForm, () => initialState),
-  on(FormActions.resetForm, (state) => ({ ...state, touched: false })),
+  on(FormActions.resetForm, (state) => ({ ...state, touched: false }))
 );
 
 // export function ngrxFormsReducer(state: NgrxForms | undefined, action: Action): NgrxForms {
