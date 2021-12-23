@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { map, Observable, of, tap } from 'rxjs';
-// import { Car } from '@nx-angular-boilerplate/models';
+import { Car } from '@nx-angular-boilerplate/models';
 import { DeserializeArray, JsonArray } from 'cerializr';
 
 @Component({
@@ -9,7 +9,7 @@ import { DeserializeArray, JsonArray } from 'cerializr';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  cars$: Observable<any[]> = of([
+  cars$: Observable<Car[]> = of([
     {
       id: 1,
       maker: 'Chevrolet',
@@ -50,7 +50,5 @@ export class AppComponent {
     { id: 8, maker: 'Ford', model: 'Escort', year: new Date().toISOString() },
     { id: 9, maker: 'Toyota', model: 'Yaris', year: new Date().toISOString() },
     { id: 10, maker: 'Infiniti', model: 'M', year: new Date().toISOString() },
-  ]).pipe(
-    // map((res: JsonArray) => DeserializeArray(res, Car))
-  );
+  ]).pipe(map((res: JsonArray) => DeserializeArray(res, Car)));
 }

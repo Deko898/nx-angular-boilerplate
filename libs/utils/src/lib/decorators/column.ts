@@ -10,7 +10,7 @@ export function Column(options: Partial<ColumnModel> = {}) {
     }
     options.key = options.key || propertyKey;
     const propType = Reflect.getMetadata('design:type', target, propertyKey);
-    options.propertyType = propType.name;
+    options.propertyType = propType?.name;
     const columnOptions = new ColumnModel(options);
     target[tableSymbol].addColumn(columnOptions);
   };
