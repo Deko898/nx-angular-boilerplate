@@ -35,7 +35,3 @@ export const formReducer = createReducer(
   on(FormActions.initializeForm, () => initialState),
   on(FormActions.resetForm, (state) => ({ ...state, touched: false }))
 );
-
-// export function ngrxFormsReducer(state: NgrxForms | undefined, action: Action): NgrxForms {
-//   return reducer(state, action);
-// }

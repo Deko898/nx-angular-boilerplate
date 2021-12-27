@@ -8,6 +8,7 @@ import { NgrxStoreModule } from '@nx-angular-boilerplate/store';
 import { environment } from '../environments/environment';
 import { SharedModule } from '@nx-angular-boilerplate/shared';
 import { IconsModule } from '@nx-angular-boilerplate/icons';
+import { interceptors } from '@nx-angular-boilerplate/core';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,7 +33,7 @@ import { IconsModule } from '@nx-angular-boilerplate/icons';
       }
     ),
   ],
-  providers: [],
+  providers: [interceptors],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
