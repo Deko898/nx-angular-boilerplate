@@ -6,9 +6,12 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "no-console": "error",
+        "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
+        "no-unused-expression": true,
+        "no-shadowed-variable": true,
+        "unused-imports/no-unused-imports": true,
         "@nrwl/nx/enforce-module-boundaries": [
-          "error",
+          true,
           {
             "enforceBuildableLibDependency": true,
             "allow": [],
