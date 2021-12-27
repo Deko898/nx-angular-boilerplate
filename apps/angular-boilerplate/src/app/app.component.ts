@@ -61,5 +61,6 @@ export class AppComponent {
 
   constructor(private iconRegistery: IconsRegistryService) {
     this.iconRegistery.addSvgIcon(SvgIconType.ARTIST, 'artist');
+    console.log('console logging');
   }
 }
