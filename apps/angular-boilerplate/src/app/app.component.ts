@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { map, Observable, of, tap } from 'rxjs';
 import { Car } from '@nx-angular-boilerplate/models';
 import { DeserializeArray, JsonArray } from 'cerializr';
+import {
+  IconsRegistryService,
+  IconType,
+  SvgIconType,
+} from '@nx-angular-boilerplate/icons';
 
 @Component({
   selector: 'nx-angular-boilerplate-root',
@@ -51,4 +56,10 @@ export class AppComponent {
     { id: 9, maker: 'Toyota', model: 'Yaris', year: new Date().toISOString() },
     { id: 10, maker: 'Infiniti', model: 'M', year: new Date().toISOString() },
   ]).pipe(map((res: JsonArray) => DeserializeArray(res, Car)));
+  svgIconType = SvgIconType;
+  iconType = IconType;
+
+  constructor(private iconRegistery: IconsRegistryService) {
+    this.iconRegistery.addSvgIcon(SvgIconType.ARTIST, 'artist');
+  }
 }

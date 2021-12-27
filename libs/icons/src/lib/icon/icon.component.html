@@ -1,0 +1,6 @@
+<ng-container *ngIf="svgIcon; else iconTypeTemp">
+  <mat-icon [svgIcon]="svgIcon"></mat-icon>
+</ng-container>
+<ng-template #iconTypeTemp>
+  <mat-icon>{{ iconType }}</mat-icon>
+</ng-template>

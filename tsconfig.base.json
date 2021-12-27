@@ -20,6 +20,7 @@
       "@nx-angular-boilerplate/auth": ["libs/auth/src/index.ts"],
       "@nx-angular-boilerplate/core": ["libs/core/src/index.ts"],
       "@nx-angular-boilerplate/form": ["libs/form/src/index.ts"],
+      "@nx-angular-boilerplate/icons": ["libs/icons/src/index.ts"],
       "@nx-angular-boilerplate/material": ["libs/material/src/index.ts"],
       "@nx-angular-boilerplate/models": ["libs/models/src/index.ts"],
       "@nx-angular-boilerplate/shared": ["libs/shared/src/index.ts"],

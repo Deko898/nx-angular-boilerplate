@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { NgrxStoreModule } from '@nx-angular-boilerplate/store';
 import { environment } from '../environments/environment';
 import { SharedModule } from '@nx-angular-boilerplate/shared';
+import { IconsModule } from '@nx-angular-boilerplate/icons';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { SharedModule } from '@nx-angular-boilerplate/shared';
     BrowserAnimationsModule,
     NgrxStoreModule.forParent(environment),
     SharedModule,
+    IconsModule,
     RouterModule.forRoot(
       [
         {

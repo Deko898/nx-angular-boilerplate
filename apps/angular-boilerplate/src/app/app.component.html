@@ -2,3 +2,9 @@
 <ng-container *ngIf="cars$ | async as cars">
   <nx-angular-boilerplate-table [data]="cars"></nx-angular-boilerplate-table>
 </ng-container>
+<nx-angular-boilerplate-icon
+  [svgIcon]="svgIconType.ARTIST"
+></nx-angular-boilerplate-icon>
+<nx-angular-boilerplate-icon
+  [iconType]="iconType.EDIT"
+></nx-angular-boilerplate-icon>
