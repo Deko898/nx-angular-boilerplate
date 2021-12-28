@@ -11,9 +11,10 @@
     "prepare": "npx husky install",
     "lint-prettier": "prettier --check .",
     "format": "prettier --write .",
-    "pre-commit": "npm run test && lint-staged",
+    "pre-commit": "npm run lint && npm run test && lint-staged",
     "commit-msg": "npx --no-install commitlint --edit",
-    "commit:lint": "commitlint -E HUSKY_GIT_PARAMS"
+    "commit:lint": "commitlint -E HUSKY_GIT_PARAMS",
+    "lint": "nx lint"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,scss,md,html}": [
@@ -54,6 +55,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "eslint-plugin-unused-imports": "^2.0.0",
     "@angular-devkit/build-angular": "~13.0.0",
     "@angular-eslint/eslint-plugin": "~13.0.1",
     "@angular-eslint/eslint-plugin-template": "~13.0.1",

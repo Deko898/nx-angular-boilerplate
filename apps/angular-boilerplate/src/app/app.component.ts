@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { map, Observable, of, tap } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import { Car } from '@nx-angular-boilerplate/models';
 import { DeserializeArray, JsonArray } from 'cerializr';
 import {
@@ -61,6 +61,5 @@ export class AppComponent {
 
   constructor(private iconRegistery: IconsRegistryService) {
     this.iconRegistery.addSvgIcon(SvgIconType.ARTIST, 'artist');
-    console.log('console logging');
   }
 }
