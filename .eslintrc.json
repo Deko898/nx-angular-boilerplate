@@ -2,7 +2,7 @@
   "root": true,
   "ignorePatterns": ["**/*"],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@nrwl/nx", "@typescript-eslint", "unused-imports"],
+  "plugins": ["@nrwl/nx", "@typescript-eslint", "unused-imports", "ngrx"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -48,7 +48,8 @@
         "plugin:@nrwl/nx/typescript",
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:ngrx/recommended"
       ],
       "rules": {}
     },

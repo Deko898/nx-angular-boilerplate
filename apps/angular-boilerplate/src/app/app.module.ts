@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
 import { NgrxStoreModule } from '@nx-angular-boilerplate/store';
 import { environment } from '../environments/environment';
 import { SharedModule } from '@nx-angular-boilerplate/shared';
 import { IconsModule } from '@nx-angular-boilerplate/icons';
 import { interceptors } from '@nx-angular-boilerplate/core';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,20 +18,7 @@ import { interceptors } from '@nx-angular-boilerplate/core';
     NgrxStoreModule.forParent(environment),
     SharedModule,
     IconsModule,
-    RouterModule.forRoot(
-      [
-        {
-          path: '',
-          loadChildren: () =>
-            import('@nx-angular-boilerplate/auth').then((m) => m.AuthModule),
-        },
-      ],
-      {
-        initialNavigation: 'enabled',
-        useHash: true,
-        relativeLinkResolution: 'legacy',
-      }
-    ),
+    AppRoutingModule,
   ],
   providers: [interceptors],
   bootstrap: [AppComponent],
