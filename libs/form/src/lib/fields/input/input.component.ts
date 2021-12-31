@@ -11,4 +11,8 @@ import { Field } from '@nx-angular-boilerplate/models';
 export class InputComponent {
   @Input() field!: Field;
   @Input() group!: FormGroup;
+
+  get ctrl() {
+    return this.group.get(this.field.name);
+  }
 }

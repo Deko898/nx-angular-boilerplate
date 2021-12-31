@@ -1,13 +1,8 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  OnDestroy,
-} from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { Field, FieldInputType } from '@nx-angular-boilerplate/models';
 import { FormFacade } from '@nx-angular-boilerplate/store';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 const structure: Field[] = [
   {
@@ -15,7 +10,10 @@ const structure: Field[] = [
     name: 'email',
     placeholder: 'Email',
     label: 'Email',
-    validator: [Validators.required, Validators.email],
+    validator: [
+      Validators.required,
+      Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+    ],
     attrs: {
       type: 'email',
     },
@@ -45,8 +43,8 @@ const structure: Field[] = [
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  structure$: Observable<Field[]> = this.formFacade.data$;
-  data$: Observable<any> = this.formFacade.structure$;
+  structure$: Observable<Field[]> = this.formFacade.structure$;
+  data$: Observable<any> = this.formFacade.data$;
 
   constructor(private formFacade: FormFacade) {}
 

@@ -8,10 +8,10 @@ import * as NgrxFormsActions from './form.actions';
   providedIn: 'root',
 })
 export class FormFacade {
-  data$ = this.store.select(formsQuery.getData);
-  structure$ = this.store.select(formsQuery.getStructure);
-  errors$ = this.store.select(formsQuery.getErrors);
-  touched$ = this.store.select(formsQuery.getTouchedForm);
+  data$ = this.store.select(formsQuery.selectData);
+  structure$ = this.store.select(formsQuery.selectStructure);
+  errors$ = this.store.select(formsQuery.selectErrors);
+  touched$ = this.store.select(formsQuery.selectTouchedForm);
 
   constructor(private store: Store<FormState>) {}
 

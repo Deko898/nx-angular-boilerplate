@@ -6,6 +6,8 @@
     [attr.placeholder]="field?.placeholder"
     [formControlName]="field.name"
   />
-  <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Hint</mat-hint> -->
+  <mat-error *ngIf="ctrl && ctrl.errors">
+    <div *ngIf="ctrl.errors?.['required']">{{ field.name }} is required.</div>
+    <div *ngIf="ctrl.errors?.['pattern']">Invalid pattern</div>
+  </mat-error>
 </mat-form-field>
